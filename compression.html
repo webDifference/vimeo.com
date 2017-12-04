@@ -11,14 +11,13 @@
 <link rel="preconnect" href="//f.vimeocdn.com">
 <meta property="fb:app_id" content="19884028963">
 
-                        <meta property="og:image" content="https://f.vimeocdn.com/images_v6/logo.png">
-            
+
 
     <meta name="description" content="Join the web’s most supportive community of creators and get high-quality tools for hosting, sharing, and streaming videos in gorgeous HD with no ads.">
 
 
 
-            <link rel="canonical" href="/log_in">
+            <link rel="canonical" href="/help/compression">
         <link rel="apple-touch-icon-precomposed" href="https://i.vimeocdn.com/favicon/main-touch_180">
 
 <link rel="mask-icon" href="https://f.vimeocdn.com/svg/legacy_view_support/iris_icon_v_64.svg" color="#17272e">
@@ -30,14 +29,12 @@
 
 <link rel="search" type="application/opensearchdescription+xml" href="/search/opensearch.xml" title="Vimeo search">
 <link rel="logo" type="image/svg" href="https://f.vimeocdn.com/logo.svg">
-        <title>Log in to Vimeo</title>
-
-                                        
-                    <link rel="stylesheet" href="https://f.vimeocdn.com/styles/css_opt/global/icon_fonts.min.css?DEV">
+        <title>Compression Guidelines on Vimeo</title>
+                                                    <link rel="stylesheet" href="https://f.vimeocdn.com/styles/css_opt/global/icon_fonts.min.css?DEV">
 
     <link rel="stylesheet" href="https://f.vimeocdn.com/styles/css_opt/global_legacy_combined.min.css?d0f49b53">
     <link rel="stylesheet" href="https://f.vimeocdn.com/styles/css_opt/global_legacy_shared_combined.min.css?6764ee97">
-    <link rel="stylesheet" href="https://f.vimeocdn.com/styles/css_opt/logged_out_registration_combined.min.css?c831e345">
+    <link rel="stylesheet" href="https://f.vimeocdn.com/styles/css_opt/help_combined.min.css?6f3b6d8b">
     <link rel="stylesheet" href="https://f.vimeocdn.com/styles/css_opt/global/force_standard_to_be_responsive.min.css?88a1d7cc">
 
 
@@ -48,7 +45,7 @@
 
         var _extend = function(){for(var r=arguments[0],n=1,e=arguments.length;e>n;n++){var t=arguments[n];for(var a in t)t.hasOwnProperty(a)&&(r[a]=t[a])}return r};
 
-            window = _extend(window, {"vimeo_esi":{"config":{"route":"Vimeo\\Controller\\HomeController:login","controller":"Vimeo\\Controller\\HomeController","autocomplete_enabled":true,"onsite_referrer":false}},"global_notifications":[],"ablincoln_config":{"user":[],"tests":[],"disabled":true}});
+            window = _extend(window, {"vimeo_esi":{"config":{"route":"Vimeo\\Controller\\HelpController:compression","controller":"Vimeo\\Controller\\HelpController","autocomplete_enabled":true,"onsite_referrer":false}},"global_notifications":[],"ablincoln_config":{"user":[],"tests":[],"disabled":true}});
 </script>
 
 
@@ -148,12 +145,14 @@
 
 
     </head>
-    <body class="logged_out_join">
+    <body class="legacy" >
         <div id="wrap">
-            <div id="main">
+            <div id="topnav_outer_wrap">
                 
-<div id="ribbon" class="VimeoBrand_ColorRibbon"></div>
+                <div id="ribbon" class="VimeoBrand_ColorRibbon "></div>
 
+                
+                
 
 <script>
     window.vimeo = window.vimeo || {};
@@ -175,14 +174,14 @@
                                         
                         
                         <li class="topnav_desktop_menu_items" data-menu-id="join">
-                            <a class="topnav_menu_join js-topnav_menu_auth" data-ga-event-click="top_nav|join" data-fatal-attraction="container:top_nav|component:join" data-gtm-click="top_nav_join_click" href="//vimeo.com/join" title="Become a Vimeo member" rel="toggle" role="button" aria-owns="topnav_join">
+                            <a class="topnav_menu_join js-topnav_menu_auth" onclick="event.preventDefault();vimeo.Modal.create({size:'xsmall',content:'/join?modal=new'}).then(completeUserLogin)" data-ga-event-click="top_nav|join" data-fatal-attraction="container:top_nav|component:join" data-gtm-click="top_nav_join_click" href="//vimeo.com/join" title="Become a Vimeo member" rel="toggle" role="button" aria-owns="topnav_join">
                                 Join                            </a>
 
                                                                                 </li>
                     
                         
                         <li class="topnav_desktop_menu_items" data-menu-id="login">
-                            <a class="js-topnav_menu_auth" data-ga-event-click="top_nav|login" data-fatal-attraction="container:top_nav|component:login" data-gtm-click="top_nav_login_click" href="//vimeo.com/log_in" title="Log in to your account" rel="toggle" role="button" aria-owns="topnav_login">
+                            <a class="js-topnav_menu_auth" onclick="event.preventDefault();vimeo.Modal.create({size:'xsmall',content:'/log_in?modal=new'}).then(completeUserLogin)" data-ga-event-click="top_nav|login" data-fatal-attraction="container:top_nav|component:login" data-gtm-click="top_nav_login_click" href="//vimeo.com/log_in" title="Log in to your account" rel="toggle" role="button" aria-owns="topnav_login">
                                 Log in                            </a>
 
                                                                                 </li>
@@ -567,118 +566,464 @@
     }, 1000);
 })(window, document);
 </script>
+            </div>
 
-<article class="main-content login">
-    <div class="intro_card">
-        <div class="inner_wrap clearfix">
-            
-<div id="registration_forms" data-init-form="login" class="col transparent_overlay_box registration_forms">
-    <div class="login_form">
-        
-<form class="row cta_form js-login_form login_page-form " action="/log_in?ssl=0&iframe=0&popup=0&player=0&product_id=0&activate=0" method="post" id="login_form" novalidate>
-    <input type="hidden" name="action" value="login">
-    <input type="hidden" name="service" value="vimeo">
+            <div id="main">
+                <div id="content">
+                    
+<header id="page_header">
+    <h1><a href="/help">Help Center</a> <span class="sub">/ Video Compression Guidelines</span></h1>
+    <p>Follow these guidelines to create video files that will upload successfully and look beautiful on Vimeo. Still confused? Check out the <a href="/videoschool/lesson/259/video-compression-basics">Video Compression Basics</a> lesson at Vimeo Video School.</p>
+</header>
 
-    
-            <div class="full_form-header">
-                            <h1>Log in to Vimeo</h1>
+<div id="cols">
+    <div class="col_large" id="compression_help">
+        <section class="block">
+            <h2 class="blue"><span class="viconify_camera_b half_opacity"></span>Video</h2>
+            <div class="pad_box nipple_top_left">
+                <div id="video_codec" class="pad_box_section">
+                    <h3>Codecs</h3>
+                    <p>A codec is the format in which your video is encoded. We accept most major codecs, but for best results we recommend using one of the following:</p>
+
+                    <h5>H.264</h5>
+                    <p>H.264 is a standard codec that balances high visual quality with efficient file size. It's a great starting point for encoding your videos as it ensures you'll get the most out of your upload quota while minimizing upload and conversion times. Be sure to choose the "High Profile" H.264 setting instead of "Main Profile." Please note that the H.264 video codec only supports resolutions up to 4K.</p>
+
+                    <h5>Apple ProRes 422 (HQ)</h5>
+                    <p>This professional-quality codec ensures a high quality for your encoded video but typically results in a much larger file size than H.264. If you notice quality issues with your H.264 videos and have ample storage space on your Vimeo account, using ProRes may produce a better result.</p>
+
+                    <h5>H.265 (HEVC)</h5>
+                    <p>H.265 or High Efficiency Video Coding (HEVC) is the successor to H.264, which offers a smaller sized file with high visual quality at the cost of increased encoding time. This video codec supports resolutions up to 8K and high dynamic range (HDR) videos.</p>
+                </div>
+                <div id="video_frame_rate" class="pad_box_section">
+                    <h3>Frame rate</h3>
+                    <p>When preparing your video for upload, it’s best to maintain the video’s native frame rate when compressing your video. If your footage exceeds 60 FPS, we will automatically reduce the frame rate. Important: We recommend a constant frame rate throughout your entire video. Always choose “constant” frame rate instead of “variable” frame rate.</p>
+                    <p>While we accept many frame rates, these are the most commonly used:</p>
+                     <div class="extra">
+                        <table class="data txt_sm">
+                            <thead>
+                                <tr>
+                                    <th>FPS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>23.98</td></tr>
+                                <tr><td>24</td></tr>
+                                <tr><td>25</td></tr>
+                                <tr><td>29.97</td></tr>
+                                <tr><td>30</td></tr>
+                                <tr><td>50</td></tr>
+                                <tr><td>59.94</td></tr>
+                                <tr><td>60</td></tr>
+                            </tbody>
+                        </table>
                     </div>
-    
-    <div class="row input_wrapper">
-        <input class="iris_form_text iris_form_text--lg js-login_email" type="email" name="email" id="signup_email" placeholder="Email address" title="Please enter a valid email address" value="" maxlength="128" required pattern="^(?:[a-zA-Z0-9áéíèàùñÑêÊäÄöÖüÜçÇ!#$%&'*+\/=?^_`{|}~-]\.?){0,63}[a-zA-Z0-áéíèàùñÑêÊäÄöÖüÜçÇ!#$%&'*+\/=?^_`{|}~-]@(?:(?:[a-zA-Z0-9áéíèàùñÑêÊäÄöÖüÜçÇ](?:[a-zA-Z0-9-áéíèàùñÑêÊäÄöÖüÜçÇ]{0,61}[a-zA-Z0-9áéíèàùñÑêÊäÄöÖüÜçÇ])?\.)*[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9áéíèàùñÑêÊäÄöÖüÜçÇ])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\])$">
-    </div>
-
-    <div class="row input_wrapper">
-        <input class="iris_form_text iris_form_text--lg js-login_password" type="password" name="password" id="login_password" placeholder="Password" title="Please enter your password" value="" required>
-        <div>
-                            <a class="forgot_password iris_link iris_link--opaque" tabindex="-1" href="/forgot_password">Forgot your password?</a>
+                </div>
+                <div class="pad_box_section block">
+                    <h3 id="video_bit_rate">Bit rate</h3>
+                    <p>Bit rate (also known as data rate) controls the visual quality of the video and its file size. If your video editing software gives you the option, choose a &ldquo;variable&rdquo; bit rate and select a value from the ranges below. You can experiment with different rates if your file is too large or you&rsquo;re not happy with the quality of your source file.</p>
+                    <div class="extra">
+                        <table class="data txt_sm">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Quality                                    </th>
+                                    <th>
+                                        Bit rate (Mbps)*                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <strong>SD</strong>
+                                    </td>
+                                    <td>
+                                        2 &ndash; 5                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>720p</strong>
+                                    </td>
+                                    <td>
+                                        5 &ndash; 10                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>1080p</strong>
+                                    </td>
+                                    <td>
+                                        10 &ndash; 20                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>2K</strong>
+                                    </td>
+                                    <td>
+                                        20 &ndash; 30                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>4K</strong>
+                                    </td>
+                                    <td>
+                                        30 &ndash; 60                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>8K</strong>
+                                    </td>
+                                    <td>
+                                        50 &ndash; 80                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-    </div>
 
-    <div class="row input_wrapper form-errors">
-        <div class="iris_notification iris_notification--warning iris_notification--no-icon l-hide">
+                    <p class="italic txt_sm">*If you have the ability to set the CRF (constant rate factor), we recommend setting it to 18 or below. For ProRes, follow the standard presets in your video editor to export your file. For example, ProRes HQ for 1080p at 29.97 fps has a target bit rate of 220 Mbps in Final Cut.</p>
+                </div>
+                <div id="video_resolution" class="pad_box_section">
+                    <h3>Resolution</h3>
+                    <p>Videos come in all shapes and sizes but these are some of the most common formats. We recommend compressing your video with a pixel aspect ratio of 1:1, or square pixels.</p>
+                    <div class="extra">
+                        <table class="data txt_sm">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Format                                    </th>
+                                    <th>
+                                        Resolution (px)                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <strong>Standard Definition (SD)</strong><br>
+                                        4:3 aspect ratio                                    </td>
+                                    <td>
+                                        640 × 480
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Standard Definition (SD)</strong><br>
+                                        16:9 aspect ratio                                    </td>
+                                    <td>
+                                        640 × 360
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>720p HD</strong><br>
+                                        16:9 aspect ratio                                    </td>
+                                    <td>
+                                        1280 × 720
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>1080p HD</strong><br>
+                                        16:9 aspect ratio                                    </td>
+                                    <td>
+                                        1920 × 1080
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>2K</strong><br>
+                                        16:9 aspect ratio                                    </td>
+                                    <td>
+                                        2560 × 1440
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>4K UHD</strong><br>
+                                        16:9 aspect ratio                                    </td>
+                                    <td>
+                                        3840 × 2160
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>DCI 4K UHD</strong><br>
+                                        17:9 aspect ratio                                    </td>
+                                    <td>
+                                        4096 × 2160
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>4K Monoscopic 360</strong><br>
+                                        2:1 aspect ratio                                    </td>
+                                    <td>
+                                        4096 × 2048
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>4K Stereoscopic 360</strong><br>
+                                        2:1 aspect ratio                                    </td>
+                                    <td>
+                                        4096 × 2048*
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>8K UHD</strong><br>
+                                        17:9 aspect ratio                                    </td>
+                                    <td>
+                                        8192 × 4320
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-    </div>
 
-    <div class="row input_wrapper">
-        <input type="submit"
-               class="iris_btn iris_btn--lg iris_btn--positive"
-               value="Log in with email"
-                              data-submit-text="Logging in..." />
-    </div>
-</form>
+                    <p class="italic txt_sm">*Stereoscopic video should be uploaded with the left and right view stacked on top of each other as 4096 x 1024 (4:1 aspect ratio) for each eye.</p>
+                </div>
+                <div id="video_color" class="pad_box_section">
+                    <h3>Color</h3>
+                    <p>For the most accurate color display on Vimeo, we recommend uploading a file that contains color space information.</p>
+                    <p class="italic">Note: some software may not offer control over your color settings.</p>
 
-<div class="form-or">
-    or</div>
+                    <h5>Color Primaries and Matrix Coefficients</h5>
+                    <p>We support all color primaries and matrices, but we recommend BT.2020 (Rec. 2020) or BT.709 (Rec. 709). You can use the same value for both color primary and matrix coefficients.</p>
 
-<form class="row" id="facebook_form" action="/log_in" method="POST" novalidate >
+                    <h5>Color Transfer Characteristics</h5>
+                    <p>We support a wide range of transfer characteristics for standard (SDR) videos, but for HDR videos we only support the <em>PQ</em> (SMPTE 2084) or <em>HLG</em> transfer function. If using the <em>PQ</em> (SMPTE 2084) transfer function, please include the following metadata to ensure the most accurate display of your video’s colors on all devices: <em>Mastering Display Color Volume metadata (SMPTE 2086)</em> and <em>Content Light Level Information metadata (CEA 861.3)</em>. This metadata is usually added automatically in post-production.</p>
 
-    <input type="hidden" name="service" value="facebook">
-    <input type="hidden" name="action" value="login">
-
-    
-    <div class="row login_facebook">
-        <button type="submit"
-                class="iris_btn iris_btn--lg facebook"
-                        >
-            <span class="iris_btn__content-wrapper">
-                <img src="https://f.vimeocdn.com/images_v6/lohp/facebook.svg?color=FFFFFF" class="facebook-icon" />
-                Log in with Facebook            </span>
-        </button>
-    </div>
-    </form>
-
-<form class="row" id="google_form" action="/log_in" method="POST" novalidate >
-
-    <input type="hidden" name="service" value="google">
-    <input type="hidden" name="action" value="login">
-
-    
-    <div class="row login_google">
-        <button type="submit"
-                class="iris_btn iris_btn--lg google"
-                        >
-            <span class="iris_btn__content-wrapper">
-                <img src="https://f.vimeocdn.com/images_v6/login/google.svg?color=FFFFFF" class="google-icon" />
-                Log in with Google            </span>
-        </button>
-    </div>
-    </form>
-
-<small class="row txt_md login_text">
-    Don’t have an account? 
-    <a data-modal-content="/join"  class="iris_link" href="/join">
-        Join    </a>
-</small>
-    </div>
-</div>
-
-<small class="row txt_sm legal_copy hide l-hide">
-    By joining Vimeo, you agree to our <a href="/terms" class="iris_link" target="_blank">Terms of Service</a> and <a href="/privacy" class="iris_link" target="_blank">Privacy Policy</a></small>
-
-        </div>
-    </article>
-
-    <div class="video_wrapper" >
-            <video class="video js-background_video shy" muted loop>
-          <source src="//vimeo-hp-videos.global.ssl.fastly.net/3/3-vp9.webm" type="video/webm; codecs=vp9">
-          <source src="//vimeo-hp-videos.global.ssl.fastly.net/3/3-vp8.webm" type="video/webm">
-          <source src="//vimeo-hp-videos.global.ssl.fastly.net/3/3.mp4" type="video/mp4">
-        </video>
-  </div>
-
-<div class="video_credit">
-  <p class="title"><a href="/87701971" class="iris_link iris_link--opaque-reverse">Yosemite II</a></p>
-  <p class="byline"><a href="/projectyose" class="iris_link iris_link--opaque-reverse">from Project Yosemite</a></p>
-</div>
-</div>
-
+                    <h5>Bit Depth</h5>
+                    <p>We support various bit depths, but we recommend a bit depth of 10 or greater for the highest quality results. For high dynamic range (HDR) videos, your file needs to have a bit depth of 10 or greater in order to be considered HDR on Vimeo.</p>
 
                 </div>
+                <div id="video_scan_type" class="pad_box_section last">
+                    <h3>Scan Type: <span>Progressive</span></h3>
+                    <p>Vimeo converts all videos to progressive for playback. For best results, we recommend deinterlacing videos prior to upload.</p>
+                </div>
+            </div>
+        </section>
+        <section class="block" id="audio">
+            <h2 class="mediumpurple"><span class="iconify_sound_b half_opacity"></span>Audio</h2>
+            <div class="pad_box nipple_top_left">
+                <div class="pad_box_section">
+                    <h3>Channels: <span>Stereo</span></h3>
+                    <p>For best results, we recommend 2-channel Stereo audio. For any number of channels above 2, we will downmix your audio to 2 channels.</p>
+                </div>
+                <div class="pad_box_section">
+                    <h3>Codec: <span>AAC-LC (Advanced Audio Codec)</span></h3>
+                    <p>For best results, we recommend using AAC-LC (low complexity) for the audio codec.</p>
+                </div>
+                <div class="pad_box_section">
+                    <h3>Data rate: <span>320 kbit/s</span></h3>
+                    <p>For best results, encode your audio at constant rate of 320 kbit/s.</p>
+                </div>
+                <div class="pad_box_section last">
+                    <h3>Sample rate: <span>48 kHz</span></h3>
+                    <p>For best results, set your audio sample rate to 48 kHz. If your working setting is already less than or equal to 48 kHz, leave it as is. For any audio uploaded with a sampling rate over 48kHz, we will resample your audio to 48 kHz or below.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="col_small">
+        <aside class="block">
+    <h4 class="boxed_heading yellow">More To Explore</h4>
+
+    <ul class="ruled_list compact_ruled_list arrow_list super_link_list">
+                    
             
+            
+            
+            
+            
+            
+            
+                            <li>
+                    <a href="/help">
+                        <p class="super_link_list_title">Help Center</p>
+                        <p class="super_link_list_subtitle">Ask questions, read our FAQ, and browse the forums.</p>
+                    </a>
+                </li>
+                            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                            <li>
+                    <a href="/videoschool">
+                        <p class="super_link_list_title">Video School</p>
+                        <p class="super_link_list_subtitle">Learn how to make better videos.</p>
+                    </a>
+                </li>
+                    </ul>
+
+    <a href="/explore" class="more">+ More stuff to explore</a>
+</aside>
+    </div>
+</div>
+                </div>
+
+                
+                
 <footer class="footer_v2 footer_v2--responsive">
-        
-        <section class="footer_v2__auxiliary footer_v2__auxiliary--transparent ">
+                    <section class="footer_v2__sitemap">
+    <div class="footer_v2__links">
+
+        <section class="footer_v2__link footer_v2_accordion">
+            <input class="footer_v2_accordion__check" type="checkbox">
+            <h4 class="footer_v2__link-header">
+                <span class="footer_v2__link-header-text">Vimeo</span>
+                <div class="footer_v2_accordion__reveal">
+                    <svg class="iris_ic is--12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"><path d="M7.707 2.293c-.39-.39-1.024-.39-1.414 0L4 4.586 1.707 2.293c-.39-.39-1.024-.39-1.414 0-.39.39-.39 1.024 0 1.414l3 3c.39.39 1.024.39 1.414 0l3-3c.39-.39.39-1.024 0-1.414z"/></svg>
+                </div>
+            </h4>
+            <ul class="footer_v2__link-list footer_v2_accordion__menu">
+                <li class="footer_v2__link-item">
+                    <a class="iris_link iris_link--gray-3 iris_link--footer" href="/about" data-gtm-click="footer_link_about_click" data-fatal-attraction="container:footer|component:vimeo|keyword:about_vimeo">
+                        About Vimeo                    </a>
+                </li>
+                <li class="footer_v2__link-item">
+                    <a class="iris_link iris_link--gray-3 iris_link--footer" href="/blog" data-gtm-click="footer_link_vimeo_blog_click" data-fatal-attraction="container:footer|component:vimeo|keyword:vimeo_blog">
+                        Vimeo Blog                    </a>
+                </li>
+                <li class="footer_v2__link-item">
+                    <a class="iris_link iris_link--gray-3 iris_link--footer" href="/help/guidelines" data-gtm-click="footer_link_vimeo_guidelines_click" data-fatal-attraction="container:footer|component:vimeo|keyword:vimeo_guidelines">
+                        Vimeo Guidelines                    </a>
+                </li>
+                <li class="footer_v2__link-item">
+                    <a class="iris_link iris_link--gray-3 iris_link--footer" href="/vip" data-gtm-click="footer_link_partners_click" data-fatal-attraction="container:footer|component:vimeo|keyword:partners">
+                        Partners                    </a>
+                </li>
+                <li class="footer_v2__link-item">
+                    <a class="iris_link iris_link--gray-3 iris_link--footer" href="https://developer.vimeo.com" data-gtm-click="footer_link_developers_click" data-fatal-attraction="container:footer|component:vimeo|keyword:developers">
+                        Developers                    </a>
+                </li>
+                <li class="footer_v2__link-item">
+                    <a class="iris_link iris_link--gray-3 iris_link--footer" href="/jobs" data-fatal-attraction="container:footer|component:vimeo|keyword:jobs">
+                        Jobs                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="footer_v2__link footer_v2_accordion">
+            <input class="footer_v2_accordion__check" type="checkbox">
+            <h4 class="footer_v2__link-header">
+                <span class="footer_v2__link-header-text">Help</span>
+                <div class="footer_v2_accordion__reveal">
+                    <svg class="iris_ic is--12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"><path d="M7.707 2.293c-.39-.39-1.024-.39-1.414 0L4 4.586 1.707 2.293c-.39-.39-1.024-.39-1.414 0-.39.39-.39 1.024 0 1.414l3 3c.39.39 1.024.39 1.414 0l3-3c.39-.39.39-1.024 0-1.414z"/></svg>
+                </div>
+            </h4>
+            <ul class="footer_v2__link-list footer_v2_accordion__menu">
+                <li class="footer_v2__link-item">
+                    <a class="iris_link iris_link--gray-3 iris_link--footer" href="/help" data-gtm-click="footer_link_help_center_click" data-fatal-attraction="container:footer|component:help|keyword:help_center">
+                        Help Center                    </a>
+                </li>
+                <li class="footer_v2__link-item">
+                    <a class="iris_link iris_link--gray-3 iris_link--footer" href="/videoschool" data-gtm-click="footer_link_video_school_click" data-fatal-attraction="container:footer|component:help|keyword:video_school">
+                        Video School                    </a>
+                </li>
+                <li class="footer_v2__link-item">
+                    <a class="iris_link iris_link--gray-3 iris_link--footer" href="/help/faq" data-gtm-click="footer_link_faq_click" data-fatal-attraction="container:footer|component:help|keyword:faq">
+                        FAQ                    </a>
+                </li>
+                <li class="footer_v2__link-item">
+                    <a class="iris_link iris_link--gray-3 iris_link--footer" href="/forums" data-gtm-click="footer_link_forums_click" data-fatal-attraction="container:footer|component:help|keyword:forums">
+                        Forums                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="footer_v2__link footer_v2_accordion">
+            <input class="footer_v2_accordion__check" type="checkbox">
+            <h4 class="footer_v2__link-header">
+                <span class="footer_v2__link-header-text">More</span>
+                <div class="footer_v2_accordion__reveal">
+                    <svg class="iris_ic is--12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"><path d="M7.707 2.293c-.39-.39-1.024-.39-1.414 0L4 4.586 1.707 2.293c-.39-.39-1.024-.39-1.414 0-.39.39-.39 1.024 0 1.414l3 3c.39.39 1.024.39 1.414 0l3-3c.39-.39.39-1.024 0-1.414z"/></svg>
+                </div>
+            </h4>
+            <ul class="footer_v2__link-list footer_v2_accordion__menu">
+                <li class="footer_v2__link-item">
+                    <a class="iris_link iris_link--gray-3 iris_link--footer" href="/ondemand" data-gtm-click="footer_link_on_demand_click" data-fatal-attraction="container:footer|component:more|keyword:on_demand">
+                        On Demand                    </a>
+                </li>
+                <li class="footer_v2__link-item">
+                    <a class="iris_link iris_link--gray-3 iris_link--footer" href="/upload" data-gtm-click="footer_link_upload_click" data-fatal-attraction="container:footer|component:more|keyword:upload">
+                        Upload                    </a>
+                </li>
+                <li class="footer_v2__link-item">
+                    <a class="iris_link iris_link--gray-3 iris_link--footer" href="/site_map" data-gtm-click="footer_link_site_map_click" data-fatal-attraction="container:footer|component:more|keyword:site_map">
+                        Site Map                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="footer_v2__link footer_v2_accordion">
+            <input class="footer_v2_accordion__check" type="checkbox">
+            <h4 class="footer_v2__link-header">
+                <span class="footer_v2__link-header-text">Upgrade</span>
+                <div class="footer_v2_accordion__reveal">
+                    <svg class="iris_ic is--12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"><path d="M7.707 2.293c-.39-.39-1.024-.39-1.414 0L4 4.586 1.707 2.293c-.39-.39-1.024-.39-1.414 0-.39.39-.39 1.024 0 1.414l3 3c.39.39 1.024.39 1.414 0l3-3c.39-.39.39-1.024 0-1.414z"/></svg>
+                </div>
+            </h4>
+            <ul class="footer_v2__link-list footer_v2_accordion__menu">
+                <li class="footer_v2__link-item">
+                    <a class="iris_link iris_link--gray-3 iris_link--footer" href="/plus?v=footer" data-gtm-click="footer_link_vimeo_plus_click" data-fatal-attraction="container:footer|component:upgrade|keyword:plus">
+                        Vimeo Plus                    </a>
+                </li>
+                <li class="footer_v2__link-item">
+                    <a class="iris_link iris_link--gray-3 iris_link--footer" href="/pro?v=footer" data-gtm-click="footer_link_vimeo_pro_click" data-fatal-attraction="container:footer|component:upgrade|keyword:pro">
+                        Vimeo PRO                    </a>
+                </li>
+                <li class="footer_v2__link-item">
+                    <a class="iris_link iris_link--gray-3 iris_link--footer" href="/business?v=footer" data-gtm-click="footer_link_vimeo_for_business_click" data-fatal-attraction="container:footer|component:upgrade|keyword:business">
+                        Vimeo Business                    </a>
+                </li>
+                <li class="footer_v2__link-item">
+                    <a class="iris_link iris_link--gray-3 iris_link--footer" href="/live" data-fatal-attraction="container:footer|component:upgrade|keyword:live">
+                        Vimeo Live                    </a>
+                </li>
+                <li class="footer_v2__link-item">
+                    <a class="iris_link iris_link--gray-3 iris_link--footer" href="https://ott.vimeo.com" data-gtm-click="footer_link_vimeo_ott" data-fatal-attraction="container:footer|component:upgrade|keyword:ott">
+                        Vimeo OTT                    </a>
+                </li>
+                <li class="footer_v2__link-item">
+                    <a class="iris_link iris_link--gray-3 iris_link--footer" target="_blank" href="http://vimeo.extole.com/website_footer" data-gtm-click="footer_link_refer_friend" data-fatal-attraction="container:footer|component:upgrade|keyword:refer_a_friend">
+                        Refer a friend                    </a>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+                <aside id="footer_tip" class="footer_v2__tip" aria-live="polite">
+            <h4 class="footer_v2__tip-header">Did you know?</h4>
+            <p class="active footer_v2__tip-content">Pay a visit to your <a href="https://join.vimeo.com/video-analytics/" data-fatal-attraction="container:did_you_know_box|component:upgrade_link">stats dashboard</a> to get powerful insights into how your videos are performing.</p>
+        </aside>
+    </section>
+    
+        <section class="footer_v2__auxiliary ">
 
     <div class="footer_v2__legal">
         <div class="footer_v2__auxiliary-content">
@@ -686,19 +1031,19 @@
         </div>
         <ul class="footer_v2__legal-list">
             <li class="footer_v2__legal-list-item">
-                <a class="iris_link iris_link--gray-4 iris_link--opaque" href="/terms" title="Terms &amp; Conditions">
+                <a class="iris_link iris_link--gray-4" href="/terms" title="Terms &amp; Conditions">
                     Terms                </a>
             </li>
             <li class="footer_v2__legal-list-item">
-                <a class="iris_link iris_link--gray-4 iris_link--opaque" href="/privacy" title="Privacy Policy">
+                <a class="iris_link iris_link--gray-4" href="/privacy" title="Privacy Policy">
                     Privacy                </a>
             </li>
             <li class="footer_v2__legal-list-item">
-                <a class="iris_link iris_link--gray-4 iris_link--opaque" href="/dmca" title="Copyright Information">
+                <a class="iris_link iris_link--gray-4" href="/dmca" title="Copyright Information">
                     Copyright                </a>
             </li>
             <li class="footer_v2__legal-list-item">
-                <a class="iris_link iris_link--gray-4 iris_link--opaque" href="/cookie_policy" title="Learn more about how Vimeo uses cookies">
+                <a class="iris_link iris_link--gray-4" href="/cookie_policy" title="Learn more about how Vimeo uses cookies">
                     Cookies                </a>
             </li>
         </ul>
@@ -709,16 +1054,20 @@
     <div class="footer_v2__filters footer_v2__auxiliary-content">
         <span class="language">
             Language:
-            <a class="iris_link iris_link--gray-4 iris_link--opaque" href="#language" onclick="vimeo.Modal.create({content: '/settings/locale', size: 'small'}); return false;" title="Choose a different language">English</a>
+            <a class="iris_link iris_link--gray-4" href="#language" onclick="vimeo.Modal.create({content: '/settings/locale', size: 'small'}); return false;" title="Choose a different language">English</a>
         </span>
 
-                    <span class="footer_v2__filter">Mature content filter: </span><a class="iris_link iris_link--gray-4 iris_link--opaque footer_v2__filters__lang contentfilter js-footer_contentfilter_link" href="javascript:void(0)" onclick="vimeo.Modal.create({content: '/settings/contentrating'})" title="Change your mature content filter">None</a>
+                    <span class="footer_v2__filter">Mature content filter: </span><a class="iris_link iris_link--gray-4 footer_v2__filters__lang contentfilter js-footer_contentfilter_link" href="javascript:void(0)" onclick="vimeo.Modal.create({content: '/settings/contentrating'})" title="Change your mature content filter">None</a>
             </div>
 
 </section>
 </footer>
-        </div>
 
+            </div>
+
+        </div>
+        
+        
         
         
     <script>
@@ -754,7 +1103,7 @@
 
     
         var vimeo = _extend((window.vimeo || {}), {"app_version":"v6","domain":"vimeo.com","url":"vimeo.com","cur_user":false,"origin_user_id":null,"is_mobile":false});
-    vimeo.config = _extend((vimeo.config || {}), {"auth_page":"login","locale":"en"});
+    vimeo.config = _extend((vimeo.config || {}), {"sticky_topnav":{"excluded_pages":["Vimeo\\Controller\\MarketingABTestController:upgrade","Vimeo\\Controller\\MarketingABTestController:business","Vimeo\\Controller\\AboutController:main","Vimeo\\Controller\\AboutController:professionals","Vimeo\\Controller\\AboutController:create","Vimeo\\Controller\\AboutController:everyone","Vimeo\\Controller\\StoreController:main","Vimeo\\Controller\\User\\Settings2Controller:main","Vimeo\\Controller\\User\\Settings2Controller:team_members","Vimeo\\Controller\\User\\Settings2Controller:password","Vimeo\\Controller\\VideoManagerController:main","Vimeo\\Controller\\UserController:main","Vimeo\\Controller\\ClipStatsController:main","Vimeo\\Controller\\Clip\\Settings\\EmbedController:embed","Vimeo\\Controller\\VideoReviewController","Vimeo\\Controller\\MessagesController","Vimeo\\Controller\\StatsController","Vimeo\\Controller\\UploadController","Vimeo\\Controller\\BlogController","Vimeo\\Controller\\OnDemand\\SettingsController","Vimeo\\Controller\\Clip\\SettingsController"],"topnav_wrap_selector":"#topnav_outer_wrap","content_wrap_selector":"#main"},"locale":"en"});
 
         var localeConfig = {
         lang: 'en',
@@ -808,42 +1157,14 @@
     </script>
 
     <script src="https://f.vimeocdn.com/js_opt/global_legacy_combined.min.js?c20f04e8"></script>
-    <script src="https://f.vimeocdn.com/js_opt/logged_out_registration_combined.min.js?f69250d7"></script>
+    <script src="https://f.vimeocdn.com/js_opt/sticky_topnav_combined.min.js?cdd40eb7"></script>
+    <script src="https://f.vimeocdn.com/js_opt/help_combined.min.js?ff05b1db"></script>
     <script src="https://f.vimeocdn.com/js_opt/react_prod_combined.min.js?8347e1cb"></script>
 
     <script async src="//www.googletagmanager.com/gtm.js?id=GTM-RBKK&l=_gtm"></script>
     <script>
         function onVimeoDomReady(e) {
-                                                
-            var parts = ('; ' + document.cookie).split('; vuid='),
-                vuid_from_cookie = (parts.length == 2) ? parts.pop().split(';').shift() : '',
-                _session_id = vuid_from_cookie,
-                _sift = window._sift = window._sift || [];
-
-            _sift.push(['_setAccount', '9fc40762c3']);
             
-            _sift.push(['_setSessionId', _session_id]);
-            _sift.push(['_trackPageview']);
-            (function() {
-
-                function ls() {
-                    var e = document.createElement('script');
-                    e.type = 'text/javascript';
-                    e.async = true;
-                    e.src = 'https://f.vimeocdn.com/js_opt/vendor/siftscience/siftscience.1.0.min.js?DEV';
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(e, s);
-                }
-
-                if (window.attachEvent) {
-                    window.attachEvent('onload', ls);
-                }
-                else {
-                    window.addEventListener('load', ls, false);
-                }
-
-            })();
-                                    
                             
                 if (PlayerManager) {
                     PlayerManager.dispatchReadySignals();
